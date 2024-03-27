@@ -1,4 +1,4 @@
-<div class="main-content">
+<div class="main-content mt-10">
 	<section class="section">
 		<div class="section-header">
 			<h1>Detail Alat Berat</h1>
@@ -17,17 +17,7 @@
 							<tr>
 								<td>Type Alat Berat :</td>
 								<td>
-									<?php
-									if ($dt->kode_type == "CRN") {
-										echo "crane";
-									} elseif ($dt->kode_type == "HTB") {
-										echo "Hatcback";
-									} elseif ($dt->kode_type == "MPV") {
-										echo "Multi Purpose Vechile";
-									} else {
-										echo "<span class='text-danger'>Type Alat Berat Belum Terdaftar</span>";
-									}
-									?>
+									<?= $dt->kode_type ?>
 								</td>
 							</tr>
 							<tr>
@@ -42,7 +32,7 @@
 								<td>Denda :</td>
 								<td>Rp. <?php echo number_format($dt->denda, 0, ',', ',') ?></td>
 							</tr>
-							
+
 							<tr>
 								<td>Stok :</td>
 								<td>Rp. <?php echo $dt->stok ?></td>

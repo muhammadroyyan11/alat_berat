@@ -3,7 +3,7 @@
 function cek_login()
 {
     $ci = get_instance();
-    if (!$ci->session->userdata('nama') != NULL) {
+    if (!$ci->session->userdata('username') != NULL) {
         // set_pesan('silahkan login.');
         redirect('admin/auth');
     }

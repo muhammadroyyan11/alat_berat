@@ -2,7 +2,7 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12 text-center">
-            <br><br><br>
+          
         </div>
     </div>
 </div>
@@ -18,10 +18,6 @@
                     <?php if ($this->session->userdata('nama')) { ?>
                         <h2>SEWA ALAT BERAT</h2>
                         <p>PLEASE CHOOSE A CAR TO RENT</p>
-                        <div class="app-btns">
-                            <a href="<?php echo base_url('customer/data_alat_berat') ?>" class="ntn btn-sm btn-primary"> ALAT BERAT</a>
-
-                        </div>
                     <?php } else { ?>
                         <h2>SEWA ALAT BERAT</h2>
                         <p>PLEASE LOGIN FIRST TO RENT OUR CARS</p>

@@ -3,18 +3,22 @@
 class Auth extends CI_Controller
 {
 
-    public function index()
+    public function login()
     {
 
         $this->_rules();
 
         if ($this->form_validation->run() == FALSE) {
+
+            $data['action'] = 'admin/auth/login';
             $this->load->view('templates_admin/header');
-            $this->load->view('form_login');
+            $this->load->view('form_login_admin', $data);
             $this->load->view('templates_admin/footer');
         } else {
             $username        = $this->input->post('username');
             $password        = md5($this->input->post('password'));
+
+            // var_dump($password);
 
             $table = 'admin';
             $cek = $this->Rental_model->cek_login($username, $password, $table);
@@ -27,21 +31,15 @@ class Auth extends CI_Controller
                     <span aria-hidden="true">&times;</span>
                 </button>
                 </div>');
-                redirect('auth/login');
+                redirect('admin/auth/login');
             } else {
                 $this->session->set_userdata('username', $cek->username);
-                $this->session->set_userdata('is_manager', $cek->is_manager);
+                $this->session->set_userdata('role_id', $cek->role_id);
 
-                switch ($cek->role_id) {
-                    case '1':
-                        redirect('admin/dashboard');
-                        break;
-                    case '2':
-                        redirect('customer/dashboard');
-                        break;
-
-                    default:
-                        break;
+                if ($cek->role_id == 1) {
+                    redirect('admin/dashboard');
+                } else {
+                    redirect('admin/laporan');
                 }
             }
         }

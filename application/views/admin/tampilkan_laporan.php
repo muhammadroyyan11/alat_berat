@@ -23,6 +23,7 @@
 
 	<div class="btn-group">
 		<a class="btn btn-sm btn-success" target="_blank" href="<?php echo base_url().'admin/laporan/print_laporan/?dari='.set_value('dari').'&sampai='.set_value('sampai') ?>"><i class="fas fa-print"></i> Print</a>
+		<a class="btn btn-sm btn-danger" style="margin-left: 10px;" href="<?php echo base_url().'admin/laporan/cetak/?dari='.set_value('dari').'&sampai='.set_value('sampai') ?>"><i class="fas fa-file"></i> Download</a>
 	</div>
 
 

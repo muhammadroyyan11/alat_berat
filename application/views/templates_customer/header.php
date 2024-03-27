@@ -11,25 +11,25 @@
     <title>Sewa Alat Berat </title>
 
     <!--=== Bootstrap CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/bootstrap.min.css" rel="stylesheet">
     <!--=== Vegas Min CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/plugins/vegas.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/plugins/vegas.min.css" rel="stylesheet">
     <!--=== Slicknav CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/plugins/slicknav.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/plugins/slicknav.min.css" rel="stylesheet">
     <!--=== Magnific Popup CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/plugins/magnific-popup.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/plugins/magnific-popup.css" rel="stylesheet">
     <!--=== Owl Carousel CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/plugins/owl.carousel.min.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/plugins/owl.carousel.min.css" rel="stylesheet">
     <!--=== Gijgo CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/plugins/gijgo.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/plugins/gijgo.css" rel="stylesheet">
     <!--=== FontAwesome CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/font-awesome.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/font-awesome.css" rel="stylesheet">
     <!--=== Theme Reset CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/reset.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/reset.css" rel="stylesheet">
     <!--=== Main Style CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/style.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/style.css" rel="stylesheet">
     <!--=== Responsive CSS ===-->
-    <link href="<?php echo base_url()?>assets/assets_shop/css/responsive.css" rel="stylesheet">
+    <link href="<?php echo base_url() ?>assets/assets_shop/css/responsive.css" rel="stylesheet">
 
 
     <!--[if lt IE 9]>
@@ -44,7 +44,7 @@
     <div class="preloader">
         <div class="preloader-spinner">
             <div class="loader-content">
-                <img src="<?php echo base_url()?>assets/assets_shop/img/preloader.gif" alt="JSOFT">
+                <img src="<?php echo base_url() ?>assets/assets_shop/img/preloader.gif" alt="JSOFT">
             </div>
         </div>
     </div>
@@ -59,8 +59,9 @@
                 <div class="row">
                     <!--== Logo Start ==-->
                     <div class="col-lg-4">
-                        <a href="<?php echo base_url('customer/dashboard')?>" class="">
-                            <h3 class="text-light ">SEWA ALAT BERAT</h3>
+                        <a href="<?php echo base_url('customer/dashboard') ?>" class="">
+                            <!-- <h3 class="text-light ">SEWA ALAT BERAT</h3> -->
+                            <img src="<?= base_url() ?>assets/img/logo.png" style="max-width: 50%;" max alt="">
                         </a>
                     </div>
                     <!--== Logo End ==-->
@@ -69,17 +70,29 @@
                     <div class="col-lg-8 d-none d-xl-block">
                         <nav class="mainmenu alignright">
                             <ul>
-                                <li class=""><a href="<?php echo base_url('customer/dashboard')?>">Beranda</a>
+                                <li class=""><a href="<?php echo base_url('customer/dashboard') ?>">Beranda</a>
                                 </li>
-                                <?php if($this->session->userdata('nama')) { ?>
-                                  <li><a href="<?php echo base_url('customer/data_alat_berat')?>">Alat Berat</a></li>
-                                  <li><a href="<?php echo base_url('customer/transaksi')?>">Transaksi</a></li>
-                                  <li><a href="<?php echo base_url('customer/About')?>">About</a></li>
-                                  <li><a href="<?php echo base_url('Auth/logout')?>">Welcome <?php echo $this->session->userdata('nama')?> <span> | Logout</span></a></li>
+                                <?php if ($this->session->userdata('nama')) { ?>
+                                    <li><a href="<?php echo base_url('customer/data_alat_berat') ?>">Alat Berat</a></li>
+                                    <li><a href="<?php echo base_url('customer/transaksi') ?>">Transaksi</a></li>
+                                    <li><a href="<?php echo base_url('customer/About') ?>">About</a></li>
+                                    <!-- <li><a href="<?php echo base_url('customer/About') ?>"> -->
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                            <i class="fa fa-bell-o"></i></a>
+                                    </li>
+                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <a class="dropdown-item" href="#">Action</a>
+                                        <a class="dropdown-item" href="#">Another action</a>
+                                        <div class="dropdown-divider"></div>
+                                        <a class="dropdown-item" href="#">Something else here</a>
+                                    </div>
+                                    </li>
+                                    <li><a href="<?php echo base_url('Auth/logout') ?>">Welcome <?php echo $this->session->userdata('nama') ?> <span> | Logout</span></a></li>
                                 <?php } else { ?>
-                                  <li><a href="<?php echo base_url('customer/About')?>">About</a></li>
-                                  <li><a href="<?php echo base_url('Register')?>">Register</a></li>
-                                  <li><a href="<?php echo base_url('Auth/login')?>">Login</a></li>
+                                    <li><a href="<?php echo base_url('customer/About') ?>">About</a></li>
+                                    <li><a href="<?php echo base_url('Register') ?>">Register</a></li>
+                                    <li><a href="<?php echo base_url('Auth/login') ?>">Login</a></li>
                                 <?php } ?>
                             </ul>
                         </nav>

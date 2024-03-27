@@ -14,7 +14,7 @@
               <span class="m-2"><?php echo $this->session->flashdata('pesan') ?></span>
 
               <div class="card-body">
-                <form method="POST" action="<?php echo base_url('auth/login')?> ">
+                <form method="POST" action="<?= $action?>">
                   <div class="form-group">
                     <label for="username">Username</label>
                     <input id="username" type="text" class="form-control" name="username" tabindex="1" autofocus>

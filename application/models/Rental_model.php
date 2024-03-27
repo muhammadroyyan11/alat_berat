@@ -45,7 +45,7 @@ class Rental_model extends CI_model
             ->where('username', $username)
             ->where('password', $password)
             ->limit(1)
-            ->get('customer');
+            ->get($table);
 
         if ($result->num_rows() > 0) {
             return $result->row();

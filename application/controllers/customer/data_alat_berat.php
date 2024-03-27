@@ -12,7 +12,7 @@ class data_alat_berat extends CI_Controller {
         $this->load->view('templates_customer/footer');
 
     }
-    public function detail_mobil($id)
+    public function detail_alat_berat($id)
         
     {  
         $data['detail'] = $this->Rental_model->ambil_id_alat_berat($id);
