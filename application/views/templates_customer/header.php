@@ -77,16 +77,31 @@
                                     <li><a href="<?php echo base_url('customer/transaksi') ?>">Transaksi</a></li>
                                     <li><a href="<?php echo base_url('customer/About') ?>">About</a></li>
                                     <!-- <li><a href="<?php echo base_url('customer/About') ?>"> -->
-                                    <li class="nav-item dropdown">
+                                    <!-- <li class="nav-item dropdown">
                                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                             <i class="fa fa-bell-o"></i></a>
+                                    </li> -->
+                                    <li class="nav-item">
+                                        <span class="badge badge-pill badge-primary" style="float:right;margin-bottom:-10px;">1</span> <!-- your badge -->
+                                        <a class="nav-link" href="messages" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><i class="fa fa-bell-o"></i></a>
+                                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                            <!-- Left Side Of Navbar -->
+                                            <ul class="navbar-nav mr-auto">
+                                                <li class="nav-item ml-2 mr-2">
+                                                    <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+                                                </li>
+                                                <li class="nav-item ml-2 mr-2">
+                                                    <a class="nav-link" href="messages">Messages <span class="sr-only">(current)</span></a>
+                                                </li>
+                                                <li class="nav-item ml-2 mr-2">
+                                                    <a class="nav-link" href="#">People <span class="sr-only">(current)</span></a>
+                                                </li>
+                                                <li class="nav-item ml-2 mr-2">
+                                                    <a class="nav-link" href="#">Photos <span class="sr-only">(current)</span></a>
+                                                </li>
+                                            </ul>
+                                        </div>
                                     </li>
-                                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <a class="dropdown-item" href="#">Action</a>
-                                        <a class="dropdown-item" href="#">Another action</a>
-                                        <div class="dropdown-divider"></div>
-                                        <a class="dropdown-item" href="#">Something else here</a>
-                                    </div>
                                     </li>
                                     <li><a href="<?php echo base_url('Auth/logout') ?>">Welcome <?php echo $this->session->userdata('nama') ?> <span> | Logout</span></a></li>
                                 <?php } else { ?>
